@@ -1830,4 +1830,146 @@
             }
         }
     </script>
+
+<!-- Premium Modal / Popup Overlay: "Estimate Request Popup - Minimalist Executive Card" -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-y-auto hidden" role="dialog" id="estimate-modal">
+<!-- Ambient Dimmed Backdrop with Blur -->
+<div class="fixed inset-0 bg-black/65 backdrop-blur-md transition-opacity" id="estimate-modal-backdrop"></div>
+<!-- Minimalist Executive Card Modal -->
+<div class="relative w-full max-w-xl bg-white/95 backdrop-blur-xl border border-gray-200/90 rounded-2xl shadow-2xl p-7 sm:p-9 md:p-10 my-auto text-on-surface z-10 transition-all">
+<!-- Close Button -->
+<button aria-label="Close modal" id="estimate-modal-close" class="absolute top-5 right-5 sm:top-6 sm:right-6 w-9 h-9 rounded-full bg-gray-100/90 hover:bg-gray-200 text-gray-600 hover:text-gray-900 flex items-center justify-center transition-colors focus:outline-none focus:ring-2 focus:ring-secondary/50">
+<span class="material-symbols-outlined text-[20px] leading-none">close</span>
+</button>
+<!-- Header -->
+<div class="pr-8 mb-6">
+<!-- Brand mark & subtitle badge -->
+<div class="flex items-center gap-2 mb-2.5">
+<span class="font-['Montserrat'] font-bold text-[11px] tracking-[0.16em] uppercase text-secondary">A&amp;E Siding LLC</span>
+<span class="inline-block w-1 h-1 rounded-full bg-gray-300"></span>
+<span class="text-[11px] font-medium text-gray-500 tracking-wide">Puyallup, WA • Est. 25+ Years</span>
+</div>
+<!-- Headline -->
+<h3 class="font-['Montserrat'] font-bold text-2xl sm:text-[26px] leading-tight text-gray-900" id="modal-title">
+                Schedule Your Free On-Site Inspection &amp; Estimate
+            </h3>
+<!-- Subhead -->
+<p class="font-['Inter'] text-[14px] text-gray-600 mt-2 leading-relaxed">
+                Clear answers, direct communication from real Washington siding specialists, and honest assessments without sales games.
+            </p>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-5" onsubmit="event.preventDefault(); document.getElementById('estimate-modal').classList.add('hidden');">
+<!-- Segmented Project Scope Selector -->
+<div>
+<label class="block font-['Inter'] font-semibold text-[11px] uppercase tracking-wider text-gray-500 mb-2">Select Project Scope</label>
+<div class="grid grid-cols-2 gap-2 p-1 bg-gray-100/90 rounded-xl border border-gray-200/80">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="modal_scope" type="radio" value="full">
+<div class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-center font-['Montserrat'] text-xs sm:text-sm font-semibold text-gray-600 transition-all peer-checked:bg-white peer-checked:text-gray-900 peer-checked:shadow-sm">
+<span class="material-symbols-outlined text-base text-secondary">roofing</span>
+<span class="">Full Home Siding</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="modal_scope" type="radio" value="repair">
+<div class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-center font-['Montserrat'] text-xs sm:text-sm font-semibold text-gray-600 transition-all peer-checked:bg-white peer-checked:text-gray-900 peer-checked:shadow-sm">
+<span class="material-symbols-outlined text-base text-secondary">home_repair_service</span>
+<span class="">Targeted Repair / Section</span>
+</div>
+</label>
+</div>
+</div>
+<!-- 2-Column Input Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<div>
+<label class="block text-xs font-semibold text-gray-700 mb-1.5 font-['Inter']" for="modal_name">First &amp; Last Name</label>
+<div class="relative">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all shadow-sm" id="modal_name" placeholder="Michael Sullivan" required="" type="text">
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-gray-700 mb-1.5 font-['Inter']" for="modal_phone">Phone Number</label>
+<div class="relative">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all shadow-sm" id="modal_phone" placeholder="(253) 555-0194" required="" type="tel">
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-gray-700 mb-1.5 font-['Inter']" for="modal_email">Email Address</label>
+<div class="relative">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all shadow-sm" id="modal_email" placeholder="m.sullivan@gmail.com" required="" type="email">
+</div>
+</div>
+<div class="">
+<label class="block text-xs font-semibold text-gray-700 mb-1.5 font-['Inter']" for="modal_notes">Anything specific about your home?</label>
+<div class="relative">
+<input class="w-full bg-white border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all shadow-sm" id="modal_notes" placeholder="e.g., 2-story Craftsman, active leaks, cedar accents, or preferred timeline" type="text">
+</div>
+</div>
+</div>
+<!-- SMS Opt-in Checkbox -->
+<label class="flex items-start gap-3 cursor-pointer pt-0.5">
+<input checked="" class="mt-0.5 w-4 h-4 rounded border-gray-300 text-secondary focus:ring-secondary focus:ring-offset-0 transition-colors" type="checkbox">
+<span class="text-xs text-gray-600 leading-snug">
+                    Text me estimate confirmation &amp; appointment updates
+                </span>
+</label>
+<!-- Dominant Warm Amber CTA Button -->
+<div>
+<button class="group w-full flex items-center justify-center gap-2 bg-[#E65100] hover:bg-[#F59E0B] text-white font-['Montserrat'] font-bold text-sm tracking-wide py-3.5 px-6 rounded-xl shadow-lg shadow-amber-900/15 transition-all duration-200 hover:shadow-xl hover:shadow-amber-500/20 active:scale-[0.99]" type="submit">
+<span class="">Claim My Free Estimate &amp; Consultation</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1 duration-200">arrow_forward</span>
+</button>
+</div>
+<!-- Trust Signature -->
+<div class="flex items-center justify-center gap-1.5 text-center text-xs text-gray-500 pt-1">
+<span class="material-symbols-outlined text-sm text-emerald-700">lock</span>
+<span class="">No spam, no aggressive follow-ups. Licensed, bonded &amp; insured (WA #ESIDISL848KO).</span>
+</div>
+<!-- Urgent Call Banner -->
+<div class="pt-3 border-t border-gray-100 text-center">
+<p class="text-xs text-gray-500">
+                    Urgent storm or leak issue? <a class="font-semibold text-secondary hover:text-emerald-800 underline underline-offset-2 transition-colors ml-0.5" href="tel:2538880236">Call (253) 888-0236 directly.</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('estimate-modal');
+        const modalClose = document.getElementById('estimate-modal-close');
+        const modalBackdrop = document.getElementById('estimate-modal-backdrop');
+        let modalShown = false;
+
+        const openModal = (e) => {
+            if (e) e.preventDefault();
+            modal.classList.remove('hidden');
+            modalShown = true;
+        };
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+        };
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+        // Open modal on all CTA buttons (anything with "Request Estimate" or "Get Estimate" etc)
+        const buttons = document.querySelectorAll('button, a[href="#estimate"], a[href="#quote"]');
+        buttons.forEach(btn => {
+            if (btn.textContent.toLowerCase().includes('estimate') || btn.textContent.toLowerCase().includes('consultation')) {
+                btn.addEventListener('click', openModal);
+            }
+        });
+
+        // Show after 35 seconds
+        setTimeout(() => {
+            if (!modalShown) {
+                openModal();
+            }
+        }, 35000);
+    });
+</script>
 </body></html>
