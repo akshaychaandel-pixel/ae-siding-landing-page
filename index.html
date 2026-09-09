@@ -1957,10 +1957,28 @@
         if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
 
         // Open modal on all CTA buttons (anything with "Request Estimate" or "Get Estimate" etc)
-        const buttons = document.querySelectorAll('button, a[href="#estimate"], a[href="#quote"]');
+        const buttons = document.querySelectorAll('button, a');
         buttons.forEach(btn => {
-            if (btn.textContent.toLowerCase().includes('estimate') || btn.textContent.toLowerCase().includes('consultation')) {
-                btn.addEventListener('click', openModal);
+            const text = btn.textContent.toLowerCase();
+            const href = btn.getAttribute('href');
+            
+            // Check if it's a CTA button or link
+            const isCTA = text.includes('estimate') || 
+                          text.includes('consultation') || 
+                          text.includes('quote') || 
+                          text.includes('request') ||
+                          text.includes('consult') ||
+                          (btn.tagName.toLowerCase() === 'button' && !btn.id.includes('close') && !btn.hasAttribute('data-target') && btn.type !== 'submit') ||
+                          (href && (href.includes('#estimate') || href.includes('#quote') || href === '#'));
+
+            if (isCTA && !btn.id.includes('estimate-modal-close')) {
+                btn.addEventListener('click', (e) => {
+                    // Prevent default if it's a link
+                    if (btn.tagName.toLowerCase() === 'a') {
+                        e.preventDefault();
+                    }
+                    openModal(e);
+                });
             }
         });
 
