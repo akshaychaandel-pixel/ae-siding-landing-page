@@ -1968,6 +1968,10 @@
                           text.includes('quote') || 
                           text.includes('request') ||
                           text.includes('consult') ||
+                          text.includes('inspection') ||
+                          text.includes('hotline') ||
+                          text.includes('project') ||
+                          text.includes('start') ||
                           (btn.tagName.toLowerCase() === 'button' && !btn.id.includes('close') && !btn.hasAttribute('data-target') && btn.type !== 'submit') ||
                           (href && (href.includes('#estimate') || href.includes('#quote') || href === '#'));
 
